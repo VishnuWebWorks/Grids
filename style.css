@@ -1,0 +1,224 @@
+/* to add equal size 1f2 */
+
+/* fraction unit  */
+
+.container1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.para {
+  padding: 0.5rem;
+  margin: 0.5rem;
+}
+
+.container1 .para {
+  background-color: rgb(67, 255, 67);
+}
+
+.container2 {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.container2 .para {
+  background-color: rgb(61, 125, 255);
+}
+
+/* we can add mixed type of value like : 200px 2fr 1fr  50% 2fr 1fr */
+
+.container3 {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  /* grid-template-rows: 1fr 2fr 1fr;
+  To add coloumn size */
+}
+
+.container3 .para {
+  background-color: rgb(255, 118, 50);
+}
+
+/* using auto size */
+
+.container4 {
+  display: grid;
+  grid-template-columns: 20% 20% auto;
+  /* column-gap: 10px;
+    row-gap: 10px; */
+  gap: 10px;
+}
+
+.container4 .para {
+  background-color: rgb(119, 52, 255);
+}
+
+.container5 {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr; */
+  grid-template-columns: repeat(6, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+}
+
+.container5 .para {
+  background-color: rgb(228, 255, 50);
+}
+
+.container6 {
+  display: grid;
+  /* grid-template-columns: minmax(200px, 1fr) 1fr 1fr;
+   To add single box size */
+  /* grid-template-columns: repeat(3, minmax(200px, 1fr));  */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.container6 .para {
+  background-color: rgb(50, 255, 245);
+}
+
+.container7 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.container7 .para {
+  background-color: rgb(255, 82, 70);
+}
+
+.boxset1 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 200px 50px;
+  gap: 10px;
+  grid-auto-flow: column;
+}
+
+.box1 {
+  background-color: crimson;
+  display: flex; /*  display: grid; */
+  align-items: center;
+  justify-content: center;
+}
+
+.boxset2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 100px 200px;
+  gap: 20px;
+  grid-auto-rows: 50px;
+}
+
+.box2 {
+  background-color: rgb(220, 83, 20);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.boxset3 {
+  display: grid;
+  grid-template-columns: 200px 300px 200px;
+  gap: 20px;
+}
+
+.box3 {
+  background-color: rgb(220, 20, 20);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.start1 {
+  /* grid-column-start: 1;
+    grid-column-end: 3; */
+  grid-column: span 4;
+  /* grid-column: 1/3; */
+}
+
+.start2 {
+  /* grid-row-start: 1;
+    grid-row-end: 3; */
+  grid-row: span 2;
+  /* grid-row: 1/3; */
+}
+
+.boxset4 {
+  display: grid;
+  grid-template-columns: 500px 500px 500px;
+}
+
+.box4 {
+  background-color: rgb(20, 183, 220);
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  height: 100px;
+}
+
+.header1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.footer1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  background-color: palevioletred;
+  border: 2px solid black;
+  grid-template-rows: 100px 100px 100px;
+  grid-template-areas:
+    "h h h h"
+    "sb1 m m sb2"
+    "f f f f";
+ 
+}
+
+
+.header {
+  grid-area:h;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.sidbar1 {
+  grid-area:sb1;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  grid-area:m;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidbar2 {
+  grid-area:sb2;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  grid-area:f;
+  border: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
